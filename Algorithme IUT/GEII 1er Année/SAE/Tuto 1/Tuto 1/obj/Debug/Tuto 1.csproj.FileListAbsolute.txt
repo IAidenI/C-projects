@@ -1,0 +1,20 @@
+U:\Info 2\Tuto 1\Tuto 1\bin\Debug\Tuto 1.exe.config
+U:\Info 2\Tuto 1\Tuto 1\bin\Debug\Tuto 1.exe
+U:\Info 2\Tuto 1\Tuto 1\bin\Debug\Tuto 1.pdb
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.AssemblyReference.cache
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto_1.Properties.Resources.resources
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.GenerateResource.cache
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.CoreCompileInputs.cache
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto 1.exe
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto 1.pdb
+U:\Info 2\Tuto 1\Tuto 1\obj\Debug\Tuto_1.Form1.resources
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\bin\Debug\Tuto 1.exe.config
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\bin\Debug\Tuto 1.exe
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\bin\Debug\Tuto 1.pdb
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.AssemblyReference.cache
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto_1.Form1.resources
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto_1.Properties.Resources.resources
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.GenerateResource.cache
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto 1.csproj.CoreCompileInputs.cache
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto 1.exe
+C:\Visual Studio\Algo iut\SAE Info\Tuto 1\Tuto 1\obj\Debug\Tuto 1.pdb

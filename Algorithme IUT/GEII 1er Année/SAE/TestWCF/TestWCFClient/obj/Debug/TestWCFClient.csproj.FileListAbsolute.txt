@@ -1,0 +1,27 @@
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.exe
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.pdb
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.FormClient.resources
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.Properties.Resources.resources
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.exe
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\2012\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.pdb
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.exe
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.exe
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.exe
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csprojResolveAssemblyReference.cache
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.FormClient.resources
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.Properties.Resources.resources
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csproj.GenerateResource.Cache
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.exe
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\bin\Debug\TestWCFClient.pdb
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csproj.AssemblyReference.cache
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.FormClient.resources
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.Properties.Resources.resources
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csproj.GenerateResource.cache
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.csproj.CoreCompileInputs.cache
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.exe
+C:\Visual Studio\Algo iut\SAE Info\TestWCF\TestWCFClient\obj\Debug\TestWCFClient.pdb

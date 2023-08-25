@@ -1,0 +1,16 @@
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\bin\Release\TestWCFClient.exe
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\bin\Release\TestWCFClient.pdb
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.FormClient.resources
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.Properties.Resources.resources
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.exe
+C:\Documents and Settings\Administrateur\Mes documents\Visual Studio 2008\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.exe
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\bin\Release\TestWCFClient.exe
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\bin\Release\TestWCFClient.pdb
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.csprojResolveAssemblyReference.cache
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.FormClient.resources
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.Properties.Resources.resources
+C:\Users\bayard\Documents\Visual Studio 2015\Projects\TestWCF\TestWCFClient\obj\Release\TestWCFClient.csproj.GenerateResource.Cache

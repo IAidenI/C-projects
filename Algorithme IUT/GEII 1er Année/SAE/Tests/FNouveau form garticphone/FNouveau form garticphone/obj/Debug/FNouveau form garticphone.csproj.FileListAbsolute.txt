@@ -1,0 +1,11 @@
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\bin\Debug\FNouveau form garticphone.exe.config
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\bin\Debug\FNouveau form garticphone.exe
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\bin\Debug\FNouveau form garticphone.pdb
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau form garticphone.csproj.AssemblyReference.cache
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau_form_garticphone.Form1.resources
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau_form_garticphone.Properties.Resources.resources
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau form garticphone.csproj.GenerateResource.cache
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau form garticphone.csproj.CoreCompileInputs.cache
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau form garticphone.exe
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau form garticphone.pdb
+C:\Visual Studio\Algo iut\SAE Info\Tests\FNouveau form garticphone\FNouveau form garticphone\obj\Debug\FNouveau_form_garticphone.Form2.resources
