@@ -20,12 +20,12 @@ struct Node {
 
 /*
 Nom : Menu
-Entrée : Vide
+Entrée : Un string qui va contenir le chemin du fichier
 Entrée/Sortie : Vide
 Sortie : Vide
 Traitement : Affiche le Menu
 */
-void Menu();
+void Menu(string fileName);
 
 
 /*
@@ -70,12 +70,12 @@ void PrintList(Node* liste);
 
 /*
 Nom : SelectFile
-Entrée : Vide
+Entrée : Un string qui va contenir le chemin du fichier qsi l'utiliseur l'as rentré au démarage
 Entrée/Sortie : Vide
 Sortie : Un string qui correspond au chemin d'accès absolu du fichier
 Traitement : Récupère le chemin du fichier
 */
-string SelectFile();
+string SelectFile(string fileName);
 
 
 /*

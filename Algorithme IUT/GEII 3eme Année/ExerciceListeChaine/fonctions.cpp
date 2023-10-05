@@ -1,6 +1,6 @@
 #include "fonctions.h"
 
-void Menu() {
+void Menu(string fileName) {
     /* ==== AFFICHAGE DU MENU ==== */
     Node* liste = NULL;
     string choix;
@@ -28,9 +28,9 @@ void Menu() {
         } else if (choix == "print") {
             PrintList(liste);
         } else if (choix == "rfile") {
-            ReadFile(SelectFile(), &liste);
+            ReadFile(SelectFile(fileName), &liste);
         } else if (choix == "wfile") {
-            WriteFile(SelectFile(), liste);
+            WriteFile(SelectFile(fileName), liste);
         } else if (choix == "help") {
             cout << "=== HELP MENU ===" << endl;
             cout << "[enter] - Saisir des coupes de points à stocker" << endl;
@@ -87,7 +87,7 @@ void Insert(Node** liste, point newData) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (newNode == nullptr) {
         cerr << "[!] Erreur : Echec de la création d'un nouveau noeud." << endl;
-        return;
+        exit(EXIT_FAILURE);
     }
 
     // Initialise le nouveau noeud avec les données fournies et le pointe vers le début de la liste existante
@@ -98,7 +98,7 @@ void Insert(Node** liste, point newData) {
 
 void Delete(Node* liste) {
     if (liste == nullptr) {
-        cerr << "[!] Erreur : Liste déjà vide." <<endl;
+        cout << "[!] Erreur : Liste déjà vide." <<endl;
         return;
     }
 
@@ -131,18 +131,22 @@ void PrintList(Node* liste) {
     cout << endl;
 }
 
-string SelectFile() {
-    string choix_fileName;
-    cout << "Selectionner le chemin absolu d'un fichier." << endl << ">";
-    cin >> choix_fileName;
+string SelectFile(string fileName) {
+    if (fileName == "") {
+        string choix_fileName;
+        cout << "Selectionner le chemin absolu d'un fichier." << endl << ">";
+        cin >> choix_fileName;
 
-    // Vérifie que le fichier existe
-    ifstream file(choix_fileName);
-    if (!file.is_open()) {
-        cerr << "[!] Erreur : Le fichier seléctionné est introuvable." << endl;
-        return "";
+        // Vérifie que le fichier existe
+        ifstream file(choix_fileName);
+        if (!file.is_open()) {
+            cout << "[!] Erreur : Le fichier seléctionné est introuvable." << endl;
+            return "";
+        }
+        return choix_fileName;
+    } else {
+        return fileName;
     }
-    return choix_fileName;
 }
 
 void ReadFile(string fileName, Node** liste) {
@@ -153,7 +157,7 @@ void ReadFile(string fileName, Node** liste) {
     ifstream file(fileName);
 
     if (!file.is_open()) {
-        cerr << "[!] Erreur : Impossible d'ouvrir le fichier." << endl;
+        cout << "[!] Erreur : Impossible d'ouvrir le fichier." << endl;
         return;
     }
 
@@ -178,7 +182,7 @@ void WriteFile(string fileName, Node* liste) {
     ofstream file(fileName, ios::trunc);
 
     if (!file.is_open()) {
-        cerr << "[!] Erreur : Impossible d'ouvrir le fichier." << endl;
+        cout << "[!] Erreur : Impossible d'ouvrir le fichier." << endl;
         return;
     }
 
