@@ -131,7 +131,7 @@ void PrintList(Node* liste) {
 string SelectFile(const string& fileName) {
     if (fileName.empty()) {
         string choix_fileName;
-        cout << "Selectionner le chemin absolu d'un fichier." << endl;
+        cout << "Selectionner le chemin absolu ou relatif d'un fichier." << endl;
         cout << ">";
         cin >> choix_fileName;
         cin.ignore();
@@ -241,31 +241,31 @@ void Search(const string& fileName, Node* liste) {
         // Ouvre un fichier en mode lecture
         ifstream file(fileName);
 
-        if (!file.is_open()) {
-            cout << "[!] Erreur : Impossible d'ouvrir le fichier." << endl;
-            return;
-        }
-
-        // Place le contenu du fichier dans la liste chaîné
-        while (getline(file, ligne)) {
-            // Split 10 23 en x = 10 et y = 23
-            istringstream iss(ligne);
-            if (iss >> x >> y) {
-                if (x == x_raw && y == y_raw) {
-                    cout << "[*] Le couple de point existe dans le fichier : " << fileName << endl;
-                    check = true;
-                    break;
+        if (file.is_open()) {
+            // Place le contenu du fichier dans la liste chaîné
+            while (getline(file, ligne)) {
+                // Split 10 23 en x = 10 et y = 23
+                istringstream iss(ligne);
+                if (iss >> x >> y) {
+                    if (x == x_raw && y == y_raw) {
+                        cout << "[*] Le couple de point existe dans le fichier : " << fileName << endl;
+                        check = true;
+                        break;
+                    } else {
+                        check = false;
+                    }
                 } else {
-                    check = false;
+                    cout << "[!] Erreur : La ligne contenant : " << ligne << " n'est pas valide." << endl;
                 }
-            } else {
-                cout << "[!] Erreur : La ligne contenant : " << ligne << " n'est pas valide." << endl;
             }
-        }
-        file.close();
-
-        if (!check) {
+            file.close();
+            if (!check) {
             cout << "[-] Le point n'existe pas dans le fichier." << endl;
+        }
+        } else {
+            if (!check) {
+                cout << "[-] Aucun fichier selectioné." << endl;
+            }
         }
 
         if (liste == nullptr) {
@@ -362,9 +362,9 @@ void Help() {
     cout << "Veillez saisir l'un des choix disponible." << endl;
     cout << "\t[enter]  - Saisir des couples de points à stocker" << endl;
     cout << "\t[print]  - Affiche les points stocké" << endl;
-    cout << "\t[rfile]  - Affiche le contenu du fichier dans une liste chaînée" << endl;
+    cout << "\t[rfile]  - Stocke le contenu du fichier dans une liste chaînée" << endl;
     cout << "\t[wfile]  - Ecris le contenu de la liste chaînée dans le fichier" << endl;
-    cout << "\t[search] - Cherche si le point existe" << endl;
+    cout << "\t[search] - Cherche si le point existe dans la liste chaînée et/ou \n\r\t\t   dans un fichier (il est possible de faire juste entrer \r\n\t\t   pour ne pas saisir de fichier)" << endl;
     cout << "\t[sort]   - Trier par ordre croissant les abscisses" << endl;
     cout << "\t[graph]  - Affichage graphique" << endl;
     cout << "\t[clear]  - Efface l'affichage" << endl;

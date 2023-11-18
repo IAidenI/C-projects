@@ -1,8 +1,10 @@
 plot '-' with linespoints title 'Graphique de la liste chaînée'
-1 2
-2 4
-3 1
-4 5
-5 3
+-4 -4
+0.28 -12
+2 2.34
+3.4 9.87
+43.234 92
+48 0.39
+91 29
 e
 pause mouse key
