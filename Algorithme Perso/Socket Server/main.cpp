@@ -1,68 +1,82 @@
-#include"fonctions.h"
-
-int main()
-{
-// Vérifie la distribution utilisé
-#if defined (WIN32)
-	// Initialisation de la bibliothèque Winsock 
-	WSADATA WSAData;
-	WSAStartup(MAKEWORD(2, 2), &WSAData);
-#else
-	printf("La distribution utilisé n'est pas windows.");
-	return 1;
+#ifdef _WIN32
+#include <winsock.h>
+#elif defined(__unix__)
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 #endif
-	
-	const unsigned int PORT = 5555;
-	unsigned int sock_err;
-	SOCKET sock_srv = NULL, sock_client = NULL;
-	SOCKADDR_IN addr;
-	int size = sizeof(addr);
 
-	sock_srv = socket(AF_INET, SOCK_STREAM, 0);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-	// Vérifie que le socket soit crée
-	if (sock_srv == INVALID_SOCKET)
-	{
-		perror("Erreur lors de la création du socket");
-		return 1;
-	}
+int main() {
+    const char* URL = "192.168.0.114";
+    const unsigned int PORT = 7777;
+    struct sockaddr_in sin;
 
-	addr.sin_addr.s_addr = htonl(INADDR_ANY);  // Récupération de l'adresse IP automatiquement
-	addr.sin_family = AF_INET;                 // Famille d'adresse utilisé (ici IPv4)
-	addr.sin_port = htons(PORT);               // Listage du port
-	sock_err = bind(sock_srv, (SOCKADDR*)&addr, size);
+    int check_connexion;
+    char buffer_rcv[4096] = "";
+#ifdef _WIN32
+    SOCKET sock, new_sock;
+#elif defined(__unix)
+    int sock, new_sock;
+#endif
 
-	// Vérifie que le socket soit fonctionel
-	if (sock_err == SOCKET_ERROR)
-	{
-		perror("Erreur lors de la validation du socket");
-		return 1;
-	}
+#ifdef _WIN32
+    WSADATA wsa;
+    WSAStartup(MAKEWORD(2, 2), &wsa);
+#endif
 
-	// Démarage de l'écoute
-	sock_err = listen(sock_srv, 1);
-	printf("Ecoute sur le port %d ...\n", PORT);
+    sin.sin_addr.s_addr = INADDR_ANY;
+    sin.sin_port = htons(PORT);
+    sin.sin_family = AF_INET;
 
-	// Vérifie que l'écoute soit établie
-	if (sock_err == SOCKET_ERROR)
-	{
-		perror("Erreur lors de l'écoute");
-		return 1;
-	}
+    sock = socket(AF_INET, SOCK_STREAM, 0);
 
-	// On accepte la demande du client
-	printf("En attente que le client se connecte...");
-	sock_client = accept(sock_srv, (SOCKADDR*)&addr, &size);
+    if (bind(sock, (struct sockaddr *) &sin, sizeof sin) < 0) {
+        perror("[!] Erreur lors de la liaison.");
+#ifdef _WIN32
+        closesocket(sock);
+#elif defined(__unix__)
+        close(sock);
+#endif
+        exit(1);
+    }
 
-	// Vérifie que la connection soit établie
-	if (sock_client == SOCKET_ERROR)
-	{
-		perror("Erreur lors de la connection du client");
-		return 1;
-	}
-	printf("Connection établie avec le client.");
+    if (listen(sock, 1) <0 ) {
+        perror("[!] Erreur lors de l'Ã©coute.");
+#ifdef _WIN32
+        closesocket(sock);
+#elif defined(__unix__)
+        close(sock);
+#endif
+        exit(1);
+    }
+
+#ifdef _WIN32
+    size_t addrlen = sizeof sin;
+    if ((new_sock = accept(sock, (struct sockaddr *) &sin, (int*)&addrlen)) < 0) {
+        perror("[!] Erreur lors de l'acceptation.");
+        closesocket(sock);
+        exit(1);
+    }
+#elif defined(__unix__)
+    socklen_t addrlen = sizeof(sin);
+    if ((new_sock = accept(sock, (struct sockaddr *) &sin, &addrlen)) < 0) {
+        perror("[!] Erreur lors de l'acceptation.");
+        close(sock);
+        exit(1);
+    }
+#endif
+
+    send(new_sock, "Hello world!", strlen("Hello world!"), 0);
+    printf("[+] Message envoyÃ©.");
 
 
-	closesocket(sock_srv);
-	return 0;
+#ifdef _WIN32
+    WSACleanup();
+#endif
+    return 0;
 }
