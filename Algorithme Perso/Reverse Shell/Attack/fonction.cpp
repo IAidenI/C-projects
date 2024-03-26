@@ -9,6 +9,33 @@ void SysInfo(const char *hostname, const char *username, const char *osVersion, 
 
 }
 
+void Reload(char *buffer_rcv, char *username, char *hostname, char *osVersion, char *kernel, char *arch) {
+    char *data = strtok(buffer_rcv, DELIMITER);
+    if (data != nullptr) {
+        strcpy(username, data);
+    }
+
+    data = strtok(nullptr, DELIMITER);
+    if (data != nullptr) {
+        strcpy(hostname, data);
+    }
+
+    data = strtok(nullptr, DELIMITER);
+    if (data != nullptr) {
+        strcpy(osVersion, data);
+    }
+
+    data = strtok(nullptr, DELIMITER);
+    if (data != nullptr) {
+        strcpy(kernel, data);
+    }
+
+    data = strtok(nullptr, DELIMITER);
+    if (data != nullptr) {
+        strcpy(arch, data);
+    }
+}
+
 SocketType Listen(const unsigned int portTarget) {
     struct sockaddr_in sin;
     SocketType sock, new_sock;

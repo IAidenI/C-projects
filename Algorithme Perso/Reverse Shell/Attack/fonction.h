@@ -19,6 +19,7 @@ typedef int SocketType;
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
+#define YELLOW "\033[33m"
 #define BLUE  "\033[34m"
 #define RESET "\033[0m"
 #define DELIMITER "|"
@@ -27,3 +28,4 @@ SocketType Listen(const unsigned int portTarget);
 void CloseConnect();
 
 void SysInfo(const char *hostname, const char *username, const char *osVersion, const char *kernel, const char *arch);
+void Reload(char *buffer_rcv, char *username, char *hostname, char *osVersion, char *kernel, char *arch);
