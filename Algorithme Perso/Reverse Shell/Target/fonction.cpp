@@ -67,6 +67,7 @@ const char* GetOSVersion_WINDOWS() {
         else
             return "Unknow";
     }
+    return "Unknow";
 }
 
 const char* GetArchitecture_WINDOWS() {
@@ -78,6 +79,7 @@ const char* GetArchitecture_WINDOWS() {
             return "x86";
         }
     }
+    return "Unknow";
 }
 #endif
 

