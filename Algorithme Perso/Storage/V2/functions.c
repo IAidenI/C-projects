@@ -201,31 +201,7 @@ void Line(const unsigned int size_max, char* buffer) {
 }
 
 void ProgressBar(double index, char* buffer, double total) {
-    unsigned int iteration_total = 0;
-    unsigned total_int = 0;
-    for (unsigned int i = 0; i < 5; i++) {
-        if (total < 1024) {
-            total_int = (unsigned int) ceil(total);
-            break;
-        }
-        total = total / 1024;
-        iteration_total++;
-    }
-
-    unsigned int iteration_used = 0;
-    unsigned int index_20 = 0;
-    for (unsigned int i = 0; i < 5; i++) {
-        if (index < 1024) {
-            if (iteration_total > iteration_used) {
-                index_20 = 0;
-            } else {
-                index_20 = (unsigned int)round((index * 20) / total_int);
-            }
-            break;
-        }
-        index = index / 1024;
-        iteration_used++;
-    }
+    unsigned int index_20 = (unsigned int)round((index * 20) / total);
     for (unsigned int i = 0; i < index_20; ++i) {
         sprintf(buffer + strlen(buffer), "#");
     }
@@ -317,7 +293,7 @@ void CheckColor(char* color_list[MAX_LIST], const double info_list[MAX_LIST_PERC
     int values[] = {2,3, 4, 5};
     int inverse[] = {0, 1, 0, 1};
     int num_values = sizeof(values) / sizeof(values[0]);
-    double temp = 0;
+    double temp;
 
     for (unsigned int i = 0; i < num_values; ++i) {
         if (inverse[i]) {
