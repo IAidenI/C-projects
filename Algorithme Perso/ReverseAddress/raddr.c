@@ -29,10 +29,17 @@ int main(int argc, char** argv) {
         return 1;
     }
 
+    char message[MESSAGE_SIZE];
+    if (!CheckInput(argv[2], strlen(argv[2]), mode, message)) {
+        printf("[-] Erreur : Saisie invalide.\n");
+        printf("       - Raison : %s\n", message);
+        return 1;
+    }
+
     if (mode != 0) {
         ReverseAddress* reverse_address = Create_Reverse_Address(argv[2], strlen(argv[2]));
         reverse_address->Reverse(reverse_address, mode);
-        reverse_address->PrintAdd(reverse_address);
+        reverse_address->Print(reverse_address);
 
         free(reverse_address);
     }
